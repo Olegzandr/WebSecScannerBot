@@ -442,7 +442,6 @@ async def check_xss(url):
 
     return issues if issues else ["✅ XSS-уязвимостей не обнаружено."]
 
-
 async def test_xss(session, test_url, param, payload, headers):
     """Отправляет XSS-пэйлоад и проверяет, вставился ли он в HTML"""
     async with SEM:
@@ -475,7 +474,6 @@ async def test_xss(session, test_url, param, payload, headers):
             return f"❌ Неизвестная ошибка при проверке XSS в параметре '{param}': {str(e)}"  # Общая ошибка
 
     return None
-
 
 async def main():
     await dp.start_polling(bot)
